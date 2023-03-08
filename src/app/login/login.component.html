@@ -1,0 +1,51 @@
+<div class="alert alert-danger" role="alert" *ngIf="error">
+  {{errorMsg}}
+</div>
+<div class="card">
+  <h4 class="card-header">Login</h4>
+  <div class="card-body">
+    <form [formGroup]="loginForm" (ngSubmit)="validateUser()">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="username"
+          [ngClass]="{
+            'is-invalid':
+              (name?.dirty || name?.touched) && name?.errors?.required
+          }"
+        />
+        <span
+          class="invalid-feedback"
+          *ngIf="(name?.dirty || name?.touched) && name?.errors?.required"
+          >Please enter your username</span
+        >
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          [ngClass]="{
+            'is-invalid':
+              (password?.dirty || password?.touched) &&
+              password?.errors?.required
+          }"
+        />
+        <div
+          class="invalid-feedback"
+          *ngIf="
+            (password?.dirty || password?.touched) && password?.errors?.required
+          "
+        >
+          Please enter your password
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-primary" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

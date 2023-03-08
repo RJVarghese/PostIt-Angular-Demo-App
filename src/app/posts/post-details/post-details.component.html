@@ -1,0 +1,8 @@
+<button (click)="goBackToList()" class="go-back-btn">Go Back</button>
+<div class="card" style="width: 18rem;" *ngIf="post">
+  <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted"><i>Posted by: </i>{{post.user.name}}</h6>
+    <p class="card-text">{{ post.body }}</p>
+  </div>
+</div>

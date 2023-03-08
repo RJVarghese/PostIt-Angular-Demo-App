@@ -1,0 +1,10 @@
+<nav class="py-2 bg-dark text-white border-bottom">
+<div class="container d-flex flex-wrap">
+  <ul class="nav me-auto">
+    <li class="nav-item"><a href="#" class="nav-link text-secondary px-2 active" aria-current="page">PostIt</a></li>
+  </ul>
+  <ul class="nav" *ngIf="isLoggedIn || alreadyLoggedIn">
+    <li class="nav-item"><a href="#" class="nav-link text-secondary px-2" (click)="logout()">Logout</a></li>
+  </ul>
+</div>
+</nav>
